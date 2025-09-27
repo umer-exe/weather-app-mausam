@@ -1,5 +1,5 @@
 :root{
-  --bg-1:#3A567A;         
+  --bg-1:#3A567A;
   --bg-2:#243B57;
   --panel:#142033;
   --panel-2:#0d1a2a;
@@ -158,11 +158,59 @@ body{
 
 /* Footer */
 .site-footer{ padding:18px 0 26px; border-top:1px solid rgba(255,255,255,.06) }
-.foot-row{ display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap }
-.foot-note{ color:var(--text-weak); font-weight:700; font-size:12px }
-.foot-links{ display:flex; gap:16px }
-.foot-link{ color:var(--text-weak); text-decoration:none; font-weight:700; font-size:12px }
+.foot-row{ display:flex; align-items:center; justify-content:center; gap:24px; flex-wrap:wrap; line-height:1 }
+.foot-note{ color:var(--text-weak); font-weight:700; font-size:12px; display:inline-flex; align-items:center; line-height:1 }
+.foot-links{ display:flex; align-items:center; gap:20px }
+.foot-link{
+  color:var(--text-weak);
+  text-decoration:none;
+  font-weight:700;
+  font-size:12px;
+  display:inline-flex;
+  align-items:center;          /* icon + label share a baseline */
+  gap:8px;
+  line-height:1;
+}
 .foot-link:hover{ color:var(--text) }
+
+/* Footer icons via CSS masks: crisp, aligned, color = currentColor */
+.icon{
+  width:16px;
+  height:16px;
+  flex:0 0 16px;
+  display:block;
+  background-color: currentColor;
+  -webkit-mask-repeat:no-repeat;
+  -webkit-mask-position:center;
+  -webkit-mask-size:contain;
+          mask-repeat:no-repeat;
+          mask-position:center;
+          mask-size:contain;
+}
+
+/* GitHub mark */
+.icon-gh{
+  -webkit-mask-image: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>\
+    <path d='M12 .296c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.089-.744.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492.998.108-.776.418-1.305.76-1.605-2.665-.3-5.467-1.334-5.467-5.93 0-1.31.468-2.381 1.236-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.984-.399 3.003-.404 1.019.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.873.118 3.176.77.84 1.234 1.911 1.234 3.221 0 4.609-2.807 5.625-5.479 5.921.43.372.814 1.103.814 2.222 0 1.606-.014 2.898-.014 3.293 0 .319.216.694.825.576C20.565 22.092 24 17.592 24 12.296 24 5.67 18.627.296 12 .296z'/>\
+  </svg>");
+          mask-image: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>\
+    <path d='M12 .296c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.089-.744.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492.998.108-.776.418-1.305.76-1.605-2.665-.3-5.467-1.334-5.467-5.93 0-1.31.468-2.381 1.236-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.984-.399 3.003-.404 1.019.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.873.118 3.176.77.84 1.234 1.911 1.234 3.221 0 4.609-2.807 5.625-5.479 5.921.43.372.814 1.103.814 2.222 0 1.606-.014 2.898-.014 3.293 0 .319.216.694.825.576C20.565 22.092 24 17.592 24 12.296 24 5.67 18.627.296 12 .296z'/>\
+  </svg>");
+}
+
+/* LinkedIn mark */
+.icon-ln{
+  -webkit-mask-image: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>\
+    <path d='M22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.454C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.225 0zM7.117 20.452H3.56V9h3.557v11.452zM5.337 7.433a2.067 2.067 0 1 1 0-4.135 2.067 2.067 0 0 1 0 4.135zM20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664H9.351V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.37-1.852 3.602 0 4.268 2.37 4.268 5.455v6.288z'/>\
+  </svg>");
+          mask-image: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>\
+    <path d='M22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.454C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.225 0zM7.117 20.452H3.56V9h3.557v11.452zM5.337 7.433a2.067 2.067 0 1 1 0-4.135 2.067 2.067 0 0 1 0 4.135zM20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664H9.351V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.37-1.852 3.602 0 4.268 2.37 4.268 5.455v6.288z'/>\
+  </svg>");
+}
 
 /* Toast */
 .toast{
@@ -179,4 +227,9 @@ body{
   .icon-btn{ width:32px; height:32px }
   .btn-primary{ padding:9px 14px }
   .empty h1{ font-size:24px }
+}
+
+/* Optional tidy on very small screens */
+@media (max-width: 600px){
+  .site-footer .foot-row{ gap:16px; flex-direction:column; }
 }
