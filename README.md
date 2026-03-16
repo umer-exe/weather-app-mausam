@@ -1,6 +1,6 @@
 # MAUSAM, Weather App
 
-Live Demo Link : https://umer-exe.github.io/PRODIGY_WD_05/
+Live Demo Link : https://umer-exe.github.io/weather-app-mausam/
 
 A clean, responsive weather app built with HTML, CSS, and JavaScript. Search cities, use your current location, switch between °C and °F, and view tidy weather cards.
 
